@@ -1,0 +1,28 @@
+server:
+  port: 8080 #端口号
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.111.242.118:3306/tech_management?useUnicode=true&characterEncoding=UTF-8&useSSL=false #得在这里配置用户名密码,要不然识别不了
+#    data-username: root  在hikari底下配置了这个就不用在这里配置用户名密码了
+#    data-password: liujiajie
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari: # Hikari 连接池配置
+      minimum-idle: 5
+      idle-timeout: 180000 # 空闲连接存活最大时间，默认600000（10分钟）
+      maximum-pool-size: 10  # 连接池最大连接数，默认是10
+      auto-commit: true  # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      pool-name: myHikariCP  # 连接池名称
+      max-lifetime: 1800000 # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      connection-timeout: 30000 # 数据库连接超时时间,默认30秒，即30000
+      username: root #使用了hikari连接池就要在这配置用户名密码,要不然会报错java.sql.SQLException: Access denied for user ''@'localhost' (using password: NO)
+      password: liujiajie
+
+
+
+
+
+
+
+
+

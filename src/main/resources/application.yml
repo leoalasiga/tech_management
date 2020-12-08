@@ -1,0 +1,8 @@
+# 应用名称
+spring:
+  application:
+    name: teach_management
+  profiles:
+    active: dev
+server:
+  port: 8080
